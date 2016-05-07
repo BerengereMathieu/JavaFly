@@ -1,16 +1,22 @@
 package javafly.mosaic.environment;
 
 public class Community {
+
+	Integer labelIdx;
+	Integer bbXMin;
+	Integer bbYMin;
+	Integer bbXMax;
+	Integer bbYMax;
+	Integer size;
 	
-	
-	public Community(Integer labelIdx, Integer bbXMin, Integer bbYMin, Integer bbXMax, Integer bbYMax, Integer size) {
+	public Community(Integer labelIdx, Integer bbXMin, Integer bbYMin) {
 		super();
 		this.labelIdx = labelIdx;
 		this.bbXMin = bbXMin;
 		this.bbYMin = bbYMin;
-		this.bbXMax = bbXMax;
-		this.bbYMax = bbYMax;
-		this.size = size;
+		this.bbXMax = bbXMin;
+		this.bbYMax = bbYMin;
+		this.size = 1;
 	}
 
 	public Integer getLabelIdx() {
@@ -47,12 +53,6 @@ public class Community {
 	public void setSize(Integer size) {
 		this.size = size;
 	}
-	Integer labelIdx;
-	Integer bbXMin;
-	Integer bbYMin;
-	Integer bbXMax;
-	Integer bbYMax;
-	Integer size;
 	
 
 }
