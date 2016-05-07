@@ -13,7 +13,13 @@ public class Environment {
 	Map<Integer,Community> communities;
 	Integer nextCommunitiesKey;
 	
-	
+	public Environment(Environment other) {
+		// TODO Auto-generated constructor stub
+		island=other.island;
+		labels=other.labels;
+		communities=other.communities;
+		nextCommunitiesKey=other.nextCommunitiesKey;
+	}
 	
 	/**
 	 * 
@@ -22,32 +28,33 @@ public class Environment {
 	 * @param y ordinate of the first site of the community
 	 * @return
 	 */
-	Integer addCommunity(int labelIdx,int x,int y){
+	public Integer addCommunity(int labelIdx,int x,int y){
 		communities.put(nextCommunitiesKey, new Community(labelIdx,x,y));
 		nextCommunitiesKey++;
 		return nextCommunitiesKey-1;
 	}
 	
-	Integer getLabelIdxMax(){
+	public Integer getLabelIdxMax(){
 		return labels.size()-1;
 	}
-	Integer getLabelCardinality(int idx){
+	
+	public Integer getLabelCardinality(int idx){
 		return labels.get(idx).cardinality;
 	}
 	
-	Color getLabelColor(int idx){
+	public Color getLabelColor(int idx){
 		return labels.get(idx).color;
 	}
 	
-	Integer getCommunitySize(int idx){
+	public Integer getCommunitySize(int idx){
 		return communities.get(idx).getSize();
 	}
 
-	Integer getCommunityLabelIdx(int idx){
+	public Integer getCommunityLabelIdx(int idx){
 		return communities.get(idx).getLabelIdx();
 	}
 	
-	Integer getCommunityBbArea(int idx){
+	public Integer getCommunityBbArea(int idx){
 		int width=communities.get(idx).getBbXMax()-communities.get(idx).getBbXMin()+1;
 		int height=communities.get(idx).getBbYMax()-communities.get(idx).getBbYMin()+1;
 		return width*height;

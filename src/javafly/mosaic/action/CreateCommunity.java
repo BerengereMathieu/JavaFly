@@ -6,17 +6,29 @@ public class CreateCommunity implements Action{
 
 	
 	final Integer labelIdx;
+	final Integer x;
+	final Integer y;
 
-	
-	public CreateCommunity(Integer labelIdx) {
+	/**
+	 * 
+	 * @param labelIdx community label
+	 * @param x first site abscissa
+	 * @param y first site ordinate
+	 */
+	public CreateCommunity(Integer labelIdx, Integer x, Integer y) {
 		super();
 		this.labelIdx = labelIdx;
+		this.x = x;
+		this.y = y;
 	}
-	
 
 	@Override
 	public Environment apply(Environment t) {
-		// TODO Auto-generated method stub
+
+		Environment updatedEnvironment=new Environment(t);
+		
+		updatedEnvironment.addCommunity(labelIdx, x, y);
+		
 		return null;
 	}
 	
